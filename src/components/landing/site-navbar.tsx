@@ -8,7 +8,8 @@ import ThemeToggle from '@/components/landing/theme-toggle';
 
 const navItems = [
   { label: 'Services', href: '#services' },
-  { label: 'Refurbished', href: '#devices' },
+  { label: 'Process', href: '#process' },
+  { label: 'Brands', href: '#brands' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Reviews', href: '#reviews' },
   { label: 'Contact', href: '#contact' },
@@ -19,44 +20,37 @@ export default function SiteNavbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 px-3 pt-3 sm:px-4">
+    <header className="sticky top-0 z-50 px-4 py-4 backdrop-blur-xl">
       <div
-        className={`mx-auto flex max-w-7xl items-center justify-between rounded-[1.6rem] border px-4 py-3 transition-all duration-500 sm:px-5 ${
+        className={`mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-[1.75rem] border px-4 py-3 transition-all duration-500 sm:px-5 ${
           scrolled
-            ? 'border-white/12 bg-background/70 shadow-[0_24px_80px_rgba(0,0,0,0.22)] backdrop-blur-2xl'
-            : 'border-white/8 bg-background/40 backdrop-blur-xl'
+            ? 'border-slate-200/70 bg-white/85 shadow-[0_24px_80px_rgba(15,23,42,0.08)] dark:border-slate-700/70 dark:bg-slate-950/90'
+            : 'border-white/10 bg-white/40 dark:bg-slate-950/40'
         }`}
       >
         <Link href="/" className="flex items-center gap-3">
-          <div className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-[1.1rem] border border-white/12 bg-[radial-gradient(circle_at_top,rgba(115,235,255,0.32),rgba(10,12,18,0.88)_60%)] shadow-[0_10px_40px_rgba(80,220,255,0.2)]">
-            <div className="absolute inset-[1px] rounded-[1rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.22),rgba(255,255,255,0.02))]" />
-            <span className="relative font-display text-lg font-semibold tracking-[0.24em] text-white">
-              IK
-            </span>
+          <div className="flex h-11 w-11 items-center justify-center rounded-[1.1rem] border border-slate-200/70 bg-blue-600 text-white shadow-lg shadow-blue-600/10 dark:border-slate-700/70 dark:bg-blue-500">
+            IK
           </div>
           <div>
-            <p className="font-display text-[0.95rem] font-semibold tracking-[0.18em] text-foreground">
-              iPhone Keddaa
-            </p>
-            <p className="text-[0.62rem] uppercase tracking-[0.32em] text-muted-foreground">
-              Repair Lab
-            </p>
+            <p className="text-sm font-semibold text-slate-950 dark:text-white">iPhone Keddaa</p>
+            <p className="text-[0.65rem] uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">Repair Lab</p>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm font-medium text-slate-700 transition-colors hover:text-blue-700 dark:text-slate-200 dark:hover:text-white"
             >
               {item.label}
             </Link>
@@ -64,21 +58,21 @@ export default function SiteNavbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <button
-            type="button"
-            className="inline-flex h-11 items-center gap-2 rounded-full border border-white/12 bg-white/6 px-4 text-sm text-muted-foreground backdrop-blur-xl"
+          <Link
+            href="tel:+919999999999"
+            className="inline-flex h-11 items-center gap-2 rounded-full border border-slate-200/80 bg-slate-50 px-4 text-sm text-slate-700 transition hover:bg-slate-100 dark:border-slate-700/70 dark:bg-slate-900 dark:text-slate-200"
           >
-            <Search className="h-4 w-4" />
-            Search model
-          </button>
-          <ThemeToggle />
+            <PhoneCall className="h-4 w-4" />
+            Call
+          </Link>
           <Link
             href="https://wa.me/919999999999"
-            className="magnetic-button inline-flex h-11 items-center gap-2 rounded-full bg-foreground px-5 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5"
+            className="inline-flex h-11 items-center gap-2 rounded-full bg-blue-600 px-4 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 hover:bg-blue-700"
           >
             <MessageCircle className="h-4 w-4" />
             WhatsApp
           </Link>
+          <ThemeToggle />
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
@@ -86,7 +80,7 @@ export default function SiteNavbar() {
           <button
             type="button"
             onClick={() => setOpen((value) => !value)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/8 backdrop-blur-xl"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200/70 bg-white/80 text-slate-700 shadow-sm dark:border-slate-700/70 dark:bg-slate-950/80 dark:text-slate-100"
             aria-label="Toggle menu"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -100,11 +94,11 @@ export default function SiteNavbar() {
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="mx-auto mt-3 max-w-7xl rounded-[1.75rem] border border-white/10 bg-background/88 p-4 shadow-[0_24px_80px_rgba(0,0,0,0.3)] backdrop-blur-2xl lg:hidden"
+            className="mx-auto mt-3 max-w-7xl rounded-[1.75rem] border border-slate-200/70 bg-white/95 p-4 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:border-slate-700/70 dark:bg-slate-950/90 lg:hidden"
           >
-            <div className="mb-4 flex items-center gap-2 rounded-[1.1rem] border border-white/10 bg-white/6 px-4 py-3 text-sm text-muted-foreground">
+            <div className="mb-4 flex items-center gap-2 rounded-[1.1rem] border border-slate-200/70 bg-slate-100 px-4 py-3 text-sm text-slate-700 dark:border-slate-700/70 dark:bg-slate-900/80 dark:text-slate-200">
               <Search className="h-4 w-4" />
-              Search iPhone 13, S24, Pixel 8...
+              Search devices and services
             </div>
             <nav className="flex flex-col gap-2">
               {navItems.map((item) => (
@@ -112,7 +106,7 @@ export default function SiteNavbar() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-[1rem] px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-white/8"
+                  className="rounded-[1rem] px-4 py-3 text-sm font-medium text-slate-900 transition-colors hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-900"
                 >
                   {item.label}
                 </Link>
@@ -121,14 +115,14 @@ export default function SiteNavbar() {
             <div className="mt-4 grid grid-cols-2 gap-3">
               <Link
                 href="tel:+919999999999"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/8 px-4 py-3 text-sm font-medium"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200/70 bg-slate-50 px-4 py-3 text-sm text-slate-700 dark:border-slate-700/70 dark:bg-slate-900/80 dark:text-slate-200"
               >
                 <PhoneCall className="h-4 w-4" />
                 Call
               </Link>
               <Link
                 href="https://wa.me/919999999999"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-4 py-3 text-sm font-semibold text-background"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-4 py-3 text-sm font-semibold text-white"
               >
                 <MessageCircle className="h-4 w-4" />
                 WhatsApp
