@@ -58,13 +58,13 @@ export default function SiteFooter() {
             <h3 className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">Location</h3>
             <div className="mt-4 space-y-3 text-sm text-slate-600 dark:text-slate-300">
               <p>11:00 AM - 9:00 PM</p>
-              <p>Premium Service Desk, City Center, Kerala</p>
+              <p>4P7J+HHM, Akeda Chaud, Rajasthan 303701</p>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Link href="tel:+919999999999" className="footer-pill inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-slate-50 px-4 py-3 text-sm dark:border-slate-700/70 dark:bg-slate-900/80">
+                <Link href="tel:+917877856752" className="footer-pill inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-slate-50 px-4 py-3 text-sm dark:border-slate-700/70 dark:bg-slate-900/80">
                   <PhoneCall className="h-4 w-4" />
                   Call
                 </Link>
-                <Link href="https://maps.google.com" className="footer-pill inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-slate-50 px-4 py-3 text-sm dark:border-slate-700/70 dark:bg-slate-900/80">
+                <Link href="https://www.google.com/maps/place/Iphone+Kedda/@27.1139367,75.728897,17z/data=!3m1!4b1!4m6!3m5!1s0x396dab49c30e69d9:0x28dda82738df2ef3!8m2!3d27.1139367!4d75.7314773!16s%2Fg%2F11zc3bq1_m?authuser=1&entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" className="footer-pill inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-slate-50 px-4 py-3 text-sm dark:border-slate-700/70 dark:bg-slate-900/80">
                   <MapPin className="h-4 w-4" />
                   Maps
                 </Link>
