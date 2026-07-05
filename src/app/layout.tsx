@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   icons: {
-    icon: [{ url: '/icon.png', type: 'image/png', sizes: '103x87' }],
+    icon: [{ url: '/icon.png?v=2', type: 'image/png', sizes: '103x87' }],
     shortcut: ['/favicon.ico'],
-    apple: [{ url: '/icon.png', sizes: '103x87', type: 'image/png' }],
+    apple: [{ url: '/icon.png?v=2', sizes: '103x87', type: 'image/png' }],
   },
   openGraph: {
     type: 'website',
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     title: 'iPhone Keddaa | Premium Mobile Repair & Refurbished Phones',
     description:
       'Book premium repairs, explore certified refurbished phones, and connect instantly on WhatsApp.',
-    images: [{ url: '/icon.png', width: 103, height: 87, alt: 'iPhone Keddaa' }],
+    images: [{ url: '/icon.png?v=2', width: 103, height: 87, alt: 'iPhone Keddaa' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'iPhone Keddaa | Premium Mobile Repair & Refurbished Phones',
     description:
       'Premium mobile repair lab with same-day service, warranty support, and certified devices.',
-    images: ['/icon.png'],
+    images: ['/icon.png?v=2'],
   },
 };
 

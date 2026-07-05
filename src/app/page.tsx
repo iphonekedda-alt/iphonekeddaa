@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: 'iPhone Keddaa',
     images: [
       {
-        url: '/icon.png',
+        url: '/icon.png?v=2',
         width: 103,
         height: 87,
         alt: 'iPhone Keddaa',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: 'Fast & Reliable Mobile Repair | iPhone Keddaa',
     description:
       'Premium mobile repair lab offering same-day service, genuine parts, certified technicians, and transparent pricing for iPhone and Android devices.',
-    images: ['/icon.png'],
+    images: ['/icon.png?v=2'],
   },
 };
 
@@ -33,7 +33,7 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'iPhone Keddaa',
-  image: ['https://iphonekeddaa.com/icon.png'],
+  image: ['https://iphonekeddaa.com/icon.png?v=2'],
   '@id': 'https://iphonekeddaa.com',
   url: 'https://iphonekeddaa.com',
   telephone: '+919999999999',
