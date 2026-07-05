@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Instagram, MapPin, MessageCircle, PhoneCall, Twitter } from 'lucide-react';
 import { footerLinks, socialLinks } from '@/components/landing/homepage-data';
@@ -9,8 +10,8 @@ export default function SiteFooter() {
         <div className="grid gap-10 lg:grid-cols-[1.3fr_0.85fr_0.85fr_1.1fr]">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-[1.1rem] bg-blue-600 text-white shadow-lg shadow-blue-600/20">
-                IK
+              <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-[0.75rem] border border-slate-200/70 bg-white/80 shadow-lg shadow-blue-600/10 dark:border-slate-700/70 dark:bg-slate-900/80">
+                <Image src="/icon.png" alt="iPhone Keddaa logo" width={48} height={48} className="h-full w-full object-contain" />
               </div>
               <div>
                 <p className="text-sm font-semibold text-slate-950 dark:text-white">iPhone Keddaa</p>

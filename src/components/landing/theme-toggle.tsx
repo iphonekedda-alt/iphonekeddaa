@@ -21,6 +21,8 @@ export default function ThemeToggle() {
     setTheme(nextTheme);
   };
 
+  const Icon = theme === 'dark' ? SunMedium : MoonStar;
+
   return (
     <button
       type="button"
@@ -28,7 +30,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       className="magnetic-button inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/8 text-foreground shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-xl transition-all hover:border-neon/40 hover:bg-white/12"
     >
-      {theme === 'dark' ? <SunMedium className="h-4 w-4" /> : <MoonStar className="h-4 w-4" />}
+      <Icon className="h-4 w-4" />
     </button>
   );
 }

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -106,35 +107,16 @@ export default function HomePage() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="relative mx-auto w-full max-w-xl"
           >
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/90 bg-white/90 p-6 shadow-[0_40px_120px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-950/80">
+            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/90 bg-white/90 p-4 shadow-[0_40px_120px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-950/80 sm:p-6">
               <div className="absolute -right-14 top-10 h-24 w-24 rounded-full bg-blue-500/10 blur-3xl" />
               <div className="absolute -bottom-10 left-8 h-32 w-32 rounded-full bg-blue-600/10 blur-3xl" />
-              <div className="relative rounded-[2rem] bg-slate-950 px-6 py-8 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">
-                <div className="mb-8 flex items-center justify-between rounded-3xl border border-white/10 bg-blue-600/10 p-4">
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.32em] text-slate-300">Mobile Repair</p>
-                    <p className="mt-2 text-3xl font-semibold">iPhone 14 Pro</p>
-                  </div>
-                  <div className="rounded-3xl bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.32em] text-slate-200">
-                    Fast Turnaround
-                  </div>
-                </div>
-                <div className="flex items-end justify-between gap-6">
-                  <div className="space-y-4">
-                    <div className="h-44 w-28 rounded-[2rem] bg-gradient-to-br from-blue-500 via-slate-900 to-slate-800 shadow-2xl shadow-blue-500/20" />
-                    <div className="space-y-3 rounded-[1.5rem] bg-slate-900/80 p-4">
-                      <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Status</p>
-                      <p className="text-lg font-semibold">Quality Check</p>
-                    </div>
-                  </div>
-                  <div className="rounded-[2rem] border border-white/10 bg-slate-900/70 px-4 py-5 text-sm shadow-xl shadow-slate-950/20">
-                    <p className="text-slate-300">Screen repair with precision calibration</p>
-                    <div className="mt-5 flex items-center gap-3 text-white">
-                      <Sparkles className="h-5 w-5 text-blue-400" />
-                      <span>High-end finish</span>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950 p-2 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">
+                <Image
+                  src="/img.jpeg"
+                  alt="Premium iPhone repair"
+                  width={720}
+                  height={860}                  loading="eager"                  className="h-full w-full rounded-[1.5rem] object-cover"
+                />
               </div>
             </div>
           </motion.div>
